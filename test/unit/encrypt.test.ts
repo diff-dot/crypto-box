@@ -5,8 +5,7 @@ const sourceText = 'warawangwarawangwarawangwarawangwarawangwarawangwarawangwara
 let encryptedText: string;
 const encryptor = new Encryptor({
   algorithm: 'aes-256-cbc',
-  key: '12345678901234567890123456789012',
-  ivLength: 16
+  key: '12345678901234567890123456789012'
 });
 
 describe('crypto-utils', async () => {
