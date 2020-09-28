@@ -1,9 +1,9 @@
 import { expect } from 'chai';
-import { CryptoBox } from '../../src/CryptoBox';
+import { Encryptor } from '../../src/Encryptor';
 
 const sourceText = 'warawangwarawangwarawangwarawangwarawangwarawangwarawangwarawang';
 let encryptedText: string;
-const cryptoBox = new CryptoBox({
+const encryptor = new Encryptor({
   algorithm: 'aes-256-cbc',
   key: '12345678901234567890123456789012',
   ivLength: 16
@@ -11,11 +11,11 @@ const cryptoBox = new CryptoBox({
 
 describe('crypto-utils', async () => {
   it('암호화', async () => {
-    encryptedText = cryptoBox.encrypt(sourceText);
+    encryptedText = encryptor.encrypt(sourceText);
   });
 
   it('복호화', async () => {
-    const decryptedText = cryptoBox.decrypt(encryptedText);
+    const decryptedText = encryptor.decrypt(encryptedText);
     expect(decryptedText).to.be.eq(sourceText);
   });
 });

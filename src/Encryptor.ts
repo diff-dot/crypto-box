@@ -1,7 +1,7 @@
 import crypto from 'crypto';
 import { EncryptOptions } from './options/EncryptOptions';
 
-export class CryptoBox {
+export class Encryptor {
   private readonly options: EncryptOptions;
   constructor(options: EncryptOptions) {
     this.options = options;
